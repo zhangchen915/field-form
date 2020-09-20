@@ -501,7 +501,7 @@ export class FormStore {
       if (mergedPreserve === false && !isListField) {
         const namePath = entity.getNamePath();
         if (this.getFieldValue(namePath) !== undefined) {
-          this.store = setValue(this.store, namePath, undefined);
+          this.store = setValue(this.store, namePath, getValue(this.initialValues, namePath));
         }
       }
     };
